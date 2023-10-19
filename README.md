@@ -4,7 +4,7 @@ Welcome to the Unofficial StockX API, developed by Raqo! This API provides acces
 
 ## Endpoints
 
-atesttotestatest. **api/shoe/generic-shoe/proxy-api-key**: This endpoint provides raw data
+1. **api/shoe/generic-shoe/proxy-api-key**: This endpoint provides raw data
 2. **api/shoeclean/generic-nike-shoe/proxy-api-key**: We highly recommend using this endpoint as it returns well-formatted data.
 
 ## Getting Started
@@ -18,7 +18,7 @@ To set up and use this API, you'll need the following tools:
 
 Follow these steps to get started:
 
-atesttotestatest. Run the following command to install dependencies:
+1. Run the following command to install dependencies:
    ```
    composer install
    ```
