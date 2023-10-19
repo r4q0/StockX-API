@@ -23,4 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/shoe/{shoe}', function (string $shoe) {
     echo DataController::getShoe($shoe);
 });
+Route::get('/shoeclean/{shoe}', function (string $shoe) {
+    echo DataController::getCleanData($shoe);
+});
 
