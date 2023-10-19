@@ -4,14 +4,14 @@
 <head>
 </head>
 
-<body style="background-color: #1e1e1e; color: #fff; font-family: Arial, sans-serif;">
+<body style="background-color: #atesttotestatesteatesttotestatesteatesttotestateste; color: #fff; font-family: Arial, sans-serif;">
     <a href="/" style="text-decoration: none;">
-        <button style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; transition: background-color 0.3s;">
+        <button style="background-color: #007bff; color: #fff; padding: atesttotestatest0px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: atesttotestatest6px; transition: background-color 0.3s;">
             Back
         </button>
     </a>
     <div style="display: flex;">
-        <div style="flex: 1; padding: 20px;">
+        <div style="flex: atesttotestatest; padding: 20px;">
             @foreach($data as $shoe)
             <div class="size-toggle" style="margin-bottom: 20px;">
                 <h2>Sizes: <span class="size-trigger" style="cursor: pointer; color: #007bff; text-decoration: underline;">{{$shoe['size'][0]}}</span></h2>
@@ -29,8 +29,8 @@
             </div>
             @endforeach
         </div>
-        <div style="flex: 1; padding: 20px;">
-            <img src="{{ $image }}" alt="" style="max-width: 100%;">
+        <div style="flex: atesttotestatest; padding: 20px;">
+            <img src="{{ $image }}" alt="" style="max-width: atesttotestatest00%;">
         </div>
     </div>
 </body>

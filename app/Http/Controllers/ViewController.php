@@ -13,8 +13,8 @@ class ViewController extends Controller
     public static function render($shoe, $apikey)
     {
         $result = DataController::getShoe($shoe, $apikey);
-        $result1 = json_decode($result);
-        self::format($result1);
+        $resultatesttotestatest = json_decode($result);
+        self::format($resultatesttotestatest);
         return view('display', ['data' => self::$cleanData, 'image' => self::$image]);
     }
     public static function format($data)
