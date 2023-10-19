@@ -5,7 +5,7 @@ Welcome to the Unofficial StockX API, developed by Raqo! This API provides acces
 ## Endpoints
 
 1. **api/shoe/generic-shoe/proxy-api-key**: This endpoint provides raw data
-2. **api/shoeclean/generic-nike-shoe/proxy-api-key**: We highly recommend using this endpoint as it returns well-formatted data.
+2. **api/shoeclean/generic-shoe/proxy-api-key**: We highly recommend using this endpoint as it returns well-formatted data.
 
 ## Getting Started
 
