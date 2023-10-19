@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 </head>
+
 <body style="background-color: #1e1e1e; color: #fff; font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 90vh; flex-direction: column;">
     <div style="text-align: center;">
         <p style="margin-bottom: 10px;">By Raqo</p>
@@ -14,4 +16,5 @@
         </form>
     </div>
 </body>
+
 </html>

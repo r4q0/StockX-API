@@ -26,4 +26,3 @@ Route::get('/shoe/{shoe}/{apikey}', function (string $shoe, string $apikey) {
 Route::get('/shoeclean/{shoe}/{apikey}', function (string $shoe, string $apikey) {
     echo DataController::getCleanData($shoe, $apikey);
 });
-

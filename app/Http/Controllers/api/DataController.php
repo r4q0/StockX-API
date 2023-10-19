@@ -40,7 +40,7 @@ class DataController extends Controller
         $result = self::getShoe($shoe, $apikey);
         $data = json_decode($result);
         $cleanData = [];
-        
+
         foreach ($data->data->product->variants as $variant) {
             $number = count($cleanData);
             $cleanData[$number]['3daysales'] = $variant->market->salesInformation->salesLast72Hours ?? '0';
@@ -49,7 +49,7 @@ class DataController extends Controller
             $cleanData[$number]['highestBid'] = $variant->market->bidAskData->highestBid ?? '0';
             $cleanData[$number]['numberOfBids'] = $variant->market->bidAskData->numberOfBids ?? '0';
             $cleanData[$number]['image'] = $data->data->product->media->smallImageUrl ?? '0';
-            
+
             foreach ($variant->sizeChart->displayOptions as $displayOption) {
                 if (isset($cleanData[$number]['size'])) {
                     $numberSize = count($cleanData[$number]['size']);
@@ -58,9 +58,8 @@ class DataController extends Controller
                 }
                 $cleanData[$number]['size'][$numberSize] = $displayOption->size;
             }
-            
         }
-        
+
         return json_encode($cleanData);
     }
 }

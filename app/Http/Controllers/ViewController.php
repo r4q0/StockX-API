@@ -18,24 +18,23 @@ class ViewController extends Controller
         return view('display', ['data' => self::$cleanData, 'image' => self::$image]);
     }
     public static function format($data)
-{
-    foreach ($data->data->product->variants as $variant) {
-        $number = count(self::$cleanData);
-        self::$cleanData[$number]['3daysales'] = $variant->market->salesInformation->salesLast72Hours;
-        self::$cleanData[$number]['lowestAsk'] = $variant->market->bidAskData->lowestAsk;
-        self::$cleanData[$number]['numberOfAsks'] = $variant->market->bidAskData->numberOfAsks;
-        self::$cleanData[$number]['highestBid'] = $variant->market->bidAskData->highestBid;
-        self::$cleanData[$number]['numberOfBids'] = $variant->market->bidAskData->numberOfBids;
-        foreach ($variant->sizeChart->displayOptions as $displayOption) {
-            if (isset(self::$cleanData[$number]['size'])) {
-                $numberSize = count(self::$cleanData[$number]['size']);
-            } else {
-                $numberSize = 0;
+    {
+        foreach ($data->data->product->variants as $variant) {
+            $number = count(self::$cleanData);
+            self::$cleanData[$number]['3daysales'] = $variant->market->salesInformation->salesLast72Hours;
+            self::$cleanData[$number]['lowestAsk'] = $variant->market->bidAskData->lowestAsk;
+            self::$cleanData[$number]['numberOfAsks'] = $variant->market->bidAskData->numberOfAsks;
+            self::$cleanData[$number]['highestBid'] = $variant->market->bidAskData->highestBid;
+            self::$cleanData[$number]['numberOfBids'] = $variant->market->bidAskData->numberOfBids;
+            foreach ($variant->sizeChart->displayOptions as $displayOption) {
+                if (isset(self::$cleanData[$number]['size'])) {
+                    $numberSize = count(self::$cleanData[$number]['size']);
+                } else {
+                    $numberSize = 0;
+                }
+                self::$cleanData[$number]['size'][$numberSize] = $displayOption->size;
             }
-            self::$cleanData[$number]['size'][$numberSize] = $displayOption->size;
+            self::$image = $data->data->product->media->smallImageUrl;
         }
-        self::$image = $data->data->product->media->smallImageUrl;
     }
-}
-
 }
