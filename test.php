@@ -5,24 +5,20 @@
 
 $data = file_get_contents('data.json');
 $data = json_decode($data, true);
-$cleanData = [];
+$new = [];
 foreach($data['data']['product']['variants'] as $variant){
-    $number = count($cleanData);
-    $cleanData[$number]['3daysales'] = $variant['market']['salesInformation']['salesLast72Hours'];
-    $cleanData[$number]['lowestAsk'] = $variant['market']["bidAskData"]["lowestAsk"];
-    $cleanData[$number]['numberOfAsks'] = $variant['market']["bidAskData"]["numberOfAsks"];
-    $cleanData[$number]['highestBid'] = $variant['market']["bidAskData"]["highestBid"];
-    $cleanData[$number]['numberOfBids'] = $variant['market']["bidAskData"]["numberOfBids"];
-    foreach($variant['sizeChart']['displayOptions'] as $displayOption){
-        if (isset($cleanData[$number]['size'])) {
-            $numberSize = count($cleanData[$number]['size']);
-        }
-        else {
-            $numberSize = 0;
-        }
-        $cleanData[$number]['size'][$numberSize] = $displayOption['size'];
-    }
+    $number = count($new);
+    $new[$number]['3daysales'] = $variant['market']['salesInformation']['salesLast72Hours'];
+    $new[$number]['lowestAsk'] = $variant['market']["bidAskData"]["lowestAsk"];
+    $new[$number]['numberOfAsks'] = $variant['market']["bidAskData"]["numberOfAsks"];
+array_push($new[$variant]['highestBid'], $variant['market']["bidAskData"]["highestBid"]);
+array_push($new[$variant]['numberOfBids'], $variant['market']["bidAskData"]["numberOfBids"]);
+foreach($variant['sizeChart']['displayOptions'] as $displayOption){
+    $numberSize = count($new[$number]['size']);
+    array_push($new[$number]['size'], $displayOption['size']);
+$new[$number]['sizeType'] = $displayOption['type'];
+}
 }
 
-var_dump($cleanData[1]);
+var_dump($new);
 

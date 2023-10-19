@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Mail\Mailables\Content;
 
 class DataController extends Controller
 {
@@ -24,13 +25,12 @@ class DataController extends Controller
     }
 
     public static function filterData($data){
-
         $pattern = '/{"data":{"product":.*?updated_at=\d+"/';
         if (preg_match($pattern, $data, $matches)) {
             $data = $matches[0] . '}}}}';
-            $data = json_decode($data, true);
-           return response()->json($data);
+            header('Content-Type: application/json');
+            return ($data);
+            
         }
-
     }
 }
