@@ -15,7 +15,7 @@ use App\Http\Controllers\ViewController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
 
 Route::get('/shoe/{shoe}', function (string $shoe) {

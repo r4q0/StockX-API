@@ -8,13 +8,14 @@ use App\Http\Controllers\api\DataController;
 class ViewController extends Controller
 {
     public static $cleanData = [];
+    public static $image;
 
     public static function render($shoe)
     {
         $result = DataController::getShoe($shoe);
         $result1 = json_decode($result);
         self::format($result1);
-        return view('display', ['data' => self::$cleanData]);
+        return view('display', ['data' => self::$cleanData, 'image' => self::$image]);
     }
     public static function format($data)
 {
@@ -33,6 +34,7 @@ class ViewController extends Controller
             }
             self::$cleanData[$number]['size'][$numberSize] = $displayOption->size;
         }
+        self::$image = $data->data->product->media->smallImageUrl;
     }
 }
 
