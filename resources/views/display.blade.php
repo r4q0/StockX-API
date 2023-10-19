@@ -5,7 +5,7 @@
 </head>
 
 <body style="background-color: #1e1e1e; color: #fff; font-family: Arial, sans-serif;">
-    <a href="/main" style="text-decoration: none;">
+    <a href="/" style="text-decoration: none;">
         <button style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; transition: background-color 0.3s;">
             Back
         </button>

@@ -18,6 +18,6 @@ Route::get('/', function () {
     return view('main');
 });
 
-Route::get('/shoe/{shoe}', function (string $shoe) {
-    return ViewController::render($shoe);
+Route::get('/shoe', function () {
+    return ViewController::render($_GET['input']);
 });
