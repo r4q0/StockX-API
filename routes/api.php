@@ -20,10 +20,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/shoe/{shoe}', function (string $shoe) {
-    echo DataController::getShoe($shoe);
+Route::get('/shoe/{shoe}/{apikey}', function (string $shoe, string $apikey) {
+    echo DataController::getShoe($shoe, $apikey);
 });
-Route::get('/shoeclean/{shoe}', function (string $shoe) {
-    echo DataController::getCleanData($shoe);
+Route::get('/shoeclean/{shoe}/{apikey}', function (string $shoe, string $apikey) {
+    echo DataController::getCleanData($shoe, $apikey);
 });
 

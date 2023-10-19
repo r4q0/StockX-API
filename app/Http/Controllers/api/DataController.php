@@ -10,12 +10,11 @@ class DataController extends Controller
 {
     public static $shoe;
     public static $size = 14; //Do not change this value you will be getting back all sizes
-    public static function getShoe($shoe)
+    public static function getShoe($shoe, $apikey)
     {
         $shoe = strtolower($shoe);
         self::$shoe = $shoe;
         $url = 'https%3A%2F%2Fstockx.com/en/' . self::$shoe;
-        $apikey = "YOURAPIKEY"; // GET YOUR PAPI KEY AT https://fas.st/t/f8U46NrZ
         $proxyurl = "https://api.scrapingant.com/v2/general?url=$url&x-api-key=$apikey&browser=false&return_page_source=true";
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $proxyurl);
@@ -36,9 +35,9 @@ class DataController extends Controller
             return ($data);
         }
     }
-    public static function getCleanData($shoe)
+    public static function getCleanData($shoe, $apikey)
     {
-        $result = self::getShoe($shoe);
+        $result = self::getShoe($shoe, $apikey);
         $data = json_decode($result);
         $cleanData = [];
         

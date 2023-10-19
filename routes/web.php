@@ -19,5 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/shoe', function () {
-    return ViewController::render($_GET['input']);
+    return ViewController::render($_GET['input'], $_GET['apikey']);
 });
