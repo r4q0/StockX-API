@@ -43,7 +43,8 @@ class DataController extends Controller
 
         foreach ($data->data->product->variants as $variant) {
             $number = count($cleanData);
-            $cleanData[$number]['3daysales'] = $variant->market->salesInformation->salesLast72Hours ?? '0';
+            $cleanData[$number]['3daysales'] = $variant->market->salesInformation->salesLast72Hours ?? '0'; 
+            $cleanData[$number]['lastsale'] = $variant->market->salesInformation->lastSale ?? '0';
             $cleanData[$number]['lowestAsk'] = $variant->market->bidAskData->lowestAsk ?? '0';
             $cleanData[$number]['numberOfAsks'] = $variant->market->bidAskData->numberOfAsks ?? '0';
             $cleanData[$number]['highestBid'] = $variant->market->bidAskData->highestBid ?? '0';
